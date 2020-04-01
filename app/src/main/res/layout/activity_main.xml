@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:statusBarScrim="@android:color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:id="@+id/coverImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/discover_gradient_fade" />
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/card_view_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="N O W  S H O W I N G"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_20" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/now_showing_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_view_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/newToolbarHolder"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <View
+                    android:id="@+id/tempBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/white" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:background="@android:color/transparent">
+
+
+                    <LinearLayout
+                        android:id="@+id/searchHolder"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:background="@drawable/rectangle_shape_border_white"
+                        android:orientation="horizontal"
+                        android:shadowColor="#ffed0909"
+                        android:shadowDx="10"
+                        android:shadowDy="10"
+                        android:shadowRadius="10">
+
+                        <ImageView
+                            android:id="@+id/searchIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            app:srcCompat="@drawable/ic_search_white_24dp" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/searchHint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:text="@string/search_movies_text"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/dp_15" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:visibility="invisible"
+                app:layout_collapseMode="pin"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <include
+                android:id="@+id/toolbar_elevation"
+                layout="@layout/include_toolbar_elevation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_3"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_below="@id/toolbar_elevation"
+                android:layout_marginLeft="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_25"
+                android:background="@color/view_divider_thin_color" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/featured_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:gravity="start"
+                android:paddingLeft="@dimen/dp_25"
+                android:paddingTop="@dimen/dp_30"
+                android:paddingRight="@dimen/dp_25"
+                android:paddingBottom="@dimen/dp_25"
+                android:text="@string/featured_movies_text"
+                android:textAlignment="textStart"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/sp_25" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/featured_movies_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/featured_movies"
+                android:layout_marginTop="@dimen/dp_10"
+                android:clipToPadding="false"
+                android:layoutAnimation="@anim/layout_animation_fall_down"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_25"
+                android:paddingRight="@dimen/dp_27"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/top_music"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/featured_movies_recycler"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_25"
+                android:paddingTop="@dimen/dp_60"
+                android:paddingRight="@dimen/dp_25"
+                android:paddingBottom="@dimen/dp_25"
+                android:text="@string/top_music_text"
+                android:textAlignment="textStart"
+                android:textColor="@color/primary_text_color"
+                android:textSize="@dimen/sp_25"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/top_music_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top_music"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_25"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/top_music_recycler"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_60"
+                android:paddingBottom="@dimen/dp_25">
+
+                <View
+                    android:id="@+id/tv_show_border"
+                    android:layout_width="@dimen/dp_250"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:background="@drawable/app_accent_stroke_bg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_shows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="70dp"
+                    android:text="@string/new_tv_shows_text"
+                    android:textColor="@color/app_accent"
+                    android:textSize="30sp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tv_show_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

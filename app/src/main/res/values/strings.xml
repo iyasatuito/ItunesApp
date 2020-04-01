@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Appetiser Test</string>
+
+    <!-- MainActivity -->
+    <string name="something_went_wrong_error_message">Something went wrong</string>
+    <string name="cached_data_message">These are your cached data</string>
+    <string name="search_movies_text">Search movies</string>
+    <string name="featured_movies_text">Featured Movies</string>
+    <string name="top_music_text">Top Music</string>
+    <string name="new_tv_shows_text">New\nTV Shows</string>
+
+    <!-- DetailActivity -->
+    <string name="track_rating">Rating %1$s</string>
+    <string name="no_data_text">No Data</string>
+    <string name="read_more_text">READ MORE</string>
+    <string name="artist_name_text">Artist Name: </string>
+    <string name="release_date_text">Release Date: </string>
+    <string name="genre_text">Genre: </string>
+    <string name="price_text">Price: </string>
+    <string name="description_text">Description: </string>
+    <string name="cannot_play_video_error_message">Cannot play video</string>
+
+    <!-- SearchActivity -->
+    <string name="an_error_occurred_message">An error occurred</string>
+    <string name="search_text">Search</string>
+
+</resources>

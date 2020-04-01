@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itunes_item_holder"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itunes_item_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/dp_6"
+        android:foreground="@drawable/selectable_background"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/itunes_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/itunes_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itunes_item_card"
+        android:layout_alignStart="@id/itunes_item_card"
+        android:layout_alignLeft="@id/itunes_item_card"
+        android:layout_alignEnd="@id/itunes_item_card"
+        android:layout_alignRight="@id/itunes_item_card"
+        android:gravity="start"
+        android:maxLines="2"
+        android:minLines="2"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_10"
+        android:textColor="@color/primary_text_color"
+        android:textSize="@dimen/sp_13" />
+
+
+</RelativeLayout>
