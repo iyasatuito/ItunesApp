@@ -24,6 +24,9 @@
 - GSON for serialization/deserialization
 - KenburnsView for aesthetics purposes
 
+#To install
+- Download "itunes_app.apk" and install
+
 # Notes
 - used different layout / view for search items and main page items to show distiction
 - country used for searching = au
