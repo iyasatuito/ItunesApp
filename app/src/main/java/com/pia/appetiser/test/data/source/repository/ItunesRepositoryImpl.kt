@@ -55,6 +55,8 @@ class ItunesRepositoryImpl @Inject constructor(
      * @param term the URL-encoded text string you want to search for
      * @param country the two-letter country code for the store you want to search. We'll use "au"
      * @param media the type of media we are fetching
+     *
+     * Note that I used constant values for the the lists to show variation of results
      */
 
     override fun updateTopMusic(): Completable  =
