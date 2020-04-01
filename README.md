@@ -24,7 +24,7 @@
 - GSON for serialization/deserialization
 - KenburnsView for aesthetics purposes
 
-#To install
+# To install
 - Download "itunes_app.apk" and install
 
 # Notes
