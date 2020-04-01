@@ -26,3 +26,4 @@
 
 # Notes
 - used different layout / view for search items and main page items to show distiction
+- country used for searching = au
